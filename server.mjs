@@ -1,5 +1,5 @@
 import express from "express";
-import { postFiles, getFiles} from "./routes/api.mjs"
+import { postFiles, getFiles, changeFiles, deleteFiles} from "./routes/api.mjs"
 import { settingsRouter } from './routes/settingsAPI.mjs'
 
 //const PORT = system.env.PORT || 8080;
@@ -9,6 +9,8 @@ const app = express();
 
 app.use(express.static('public'))
 
+app.use('/deleteFiles', deleteFiles);
+app.use('/changeFiles', changeFiles);
 app.use('/postFile', postFiles);
 app.use('/getFiles', getFiles);
 app.use('/settings', settingsRouter);
