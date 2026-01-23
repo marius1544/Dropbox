@@ -3,24 +3,33 @@ export const postFiles = express.Router();
 export const getFiles = express.Router();
 export const changeFiles = express.Router();
 export const deleteFiles = express.Router();
-postFiles.post("/", (req, res) => {
-  res
-    .status(201)
-    .json({
-       body: {
-         filename: "picture1.png",
-         status: "not uploaded" 
-    } });
+postFiles.post("/:id", (req, res) => {
+  const { id } = req.params;
+
+  res.status(201).json({
+    message: `Added file ${id}`,
+    filename: "picture1.png",
+    filestatus: "not uploaded"
+  });
 });
 
-changeFiles.put("/", (req, res) => {
-  res.status(200).send("Changed the file or the status");
+
+changeFiles.put("/:id", (req, res) => {
+  const { id } = req.params;
+  res.status(200).send(`Changed the file or the status on file ${id}`);
 })
 
-deleteFiles.delete("/", (req, res) => {
-  res.status(200).send("Successfully deleted");
-})
+deleteFiles.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  res.status(200).send(`Successfully deleted file ${id}`);
+})git
 
-getFiles.get("/", (req, res) => {
-  res.status(200).json(postFiles);
+getFiles.get("/:id", (req, res) => {
+  const { id } = req.params;
+
+  res.status(200).json({
+    id: `Retrived file ${id}`,
+    filename: "picture1.png",
+    filestatus: "not uploaded"
+  });
 });
