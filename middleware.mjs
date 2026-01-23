@@ -1,13 +1,10 @@
-import { log } from "node:console";
-
 let fileEndings = [
     { ending:'jpg' },
     { ending: 'jpeg' },
     { ending: 'png' },
 ];
 
-let file = 'myfile.jpg'
-function validateFileType(fileType){
+export function validateFileType(fileType){
     const fileEnding = fileType.split('.').pop();
      const isValid = fileEndings.find(item => item.ending === fileEnding);
 
