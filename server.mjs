@@ -6,7 +6,7 @@ import { settingsRouter } from './routes/settingsAPI.mjs'
 const PORT = 8081;
 const app = express();
 
-
+app.use(express.json());
 app.use(express.static('public'))
 
 app.use('/deleteFiles', deleteFiles);
