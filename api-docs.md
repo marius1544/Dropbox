@@ -15,7 +15,12 @@ Responses are simulated, and there are no database connected yet.
 ---
 
 ### POST /postFile/:id
-Creates (simulates) a new file.
+Creates (simulates) a new file. In the body, for the validateFileType function to work, you are to write 
+{
+  "filename": "myPicture.png"
+}
+
+for the program to check if the file is a valid file type against
 
 **Request**
 - Method: `POST`
@@ -112,10 +117,10 @@ The application also has a separate API for settings.
 
 ## Status Codes Used
 
-| Status Code | Meaning |
-|------------|--------|
-| 200 | OK – Request successful |
-| 201 | Created – Resource created |
+Status Code | Meaning |
+200 OK – Request successful
+201 Created – Resource created
+400 Bad Request – Invalid file type or missing filename
 
 ---
 
