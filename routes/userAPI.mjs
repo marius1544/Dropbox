@@ -1,6 +1,7 @@
 import express from "express";
-import { generateID } from "../dataObjects/user.mjs"
-import user from "../dataObjects/user.mjs"
+import { generateID } from "../dataObjects/user.mjs";
+import user from "../dataObjects/user.mjs";
+
 function generateUsername(userName){
   return userName;
 }
@@ -13,11 +14,15 @@ userRouter.post('/', (req, res) => {
   newUser.username = "";
   
  if(newUser.username === ""){
-  newUser.username = generateUsername("Mariusr");
-} else {
+  newUser.username = generateUsername("Marius");
+  } else {
   console.log("After if", newUser.username = "");
 }
   res.json(JSON.stringify(newUser));
+})
+
+userRouter.delete('/', (req, res) => {
+ res.json(JSON.stringify(newUser));
 })
 
 export default userRouter;
