@@ -1,4 +1,4 @@
-const Users = {};
+export const Users = {};
 
 function user(){
     return{
@@ -13,6 +13,10 @@ export function generateID(){
         id = (Math.random() * Number.MAX_SAFE_INTEGER).toString(16);
     } while (Users[id])
         return id;
+}
+
+export function generateUsername(userName){
+  return userName;
 }
 
 export default user;

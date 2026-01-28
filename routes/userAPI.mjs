@@ -1,10 +1,8 @@
 import express from "express";
 import { generateID } from "../dataObjects/user.mjs";
 import user from "../dataObjects/user.mjs";
+import { generateUsername } from "../dataObjects/user.mjs";
 
-function generateUsername(userName){
-  return userName;
-}
 const userRouter = express.Router();
 userRouter.use(express.json())
 
