@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure your files</title>
+    <script type="module" src="index.mjs"></script>
 </head>
 <body>
-
+  <form id="InputForm">
+<input id="usernameInp" type="text" placeholder="Input username here"><br>
+<input id="TOSmenuCheckbox" type="checkbox">
+<label for="TOSmenuCheckbox">Click checkbox to agree to Terms of service</label>
+<button id="submitTOS">Submit</button>
+</form>
+<br>
 <label for="settings">Settings:</label>
 <select id="settings">
   <option selected>Choose value</label>
