@@ -3,7 +3,8 @@ export const Users = {};
 function user(){
     return{
         id: null,
-        username: null
+        username: null,
+        consent: null,
     }
 }
 
@@ -15,8 +16,5 @@ export function generateID(){
         return id;
 }
 
-export function generateUsername(userName){
-  return userName;
-}
 
 export default user;
