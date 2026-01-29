@@ -12,13 +12,28 @@
 <input id="TOSmenuCheckbox" type="checkbox">
 <label for="TOSmenuCheckbox">Click checkbox to agree to <a href="ToS.md">Terms of service</a> </label>
 <button id="submitTOS">Submit</button>
+<p id="formOutPutField"></p>
 </form>
 <br>
 <label for="settings">Settings:</label>
 <select id="settings">
   <option selected>Choose value</label>
   <option id="dark-ligth" value="dark-light">☀️/🌙 Dark/ligth mode</option>
-  <option value="setting2">Innstilling 2</option>
+  <option value="retract-delete">Retract consent & delete account</option>
 </select>
+ <button id="retract-delete">Retract</button><br>
+ <input id="userIdInp" type="text" placeholder="Input your ID here">
+ <script>
+    function divBuilder(e){
+      let btn = document.getElementById("retract-delete");
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("SUP");
+        
+      })
+      
+    }
+
+  </script>
 </body>
 </html>
