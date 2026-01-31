@@ -23,6 +23,12 @@ submitTosBtn.addEventListener("click", async (event) => {
     hasConsented = false;
   }
 
+  
+if (!usernameVar) {
+    formOutPutFieldVar.innerHTML = "Username is required.";
+    return;
+  }
+  
   try {
     const response = await fetch("/user", {
       method: "POST",
