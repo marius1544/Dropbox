@@ -6,11 +6,25 @@ const retractBtn = document.getElementById("retract-delete");
 const userIdInp = document.getElementById("userIdInp");
   
 submitTosBtn.disabled=true;
-
 TOSmenuCheckboxVar.addEventListener("change", () => {
     submitTosBtn.disabled = TOSmenuCheckboxVar.checked == false;
   })
   
+  //----------------------- Settings ------------------------//
+  const settingsIcon = document.getElementById("Settings");
+    const subMenu = document.querySelector(".sub-menu");
+    const retractConsent = document.getElementById("retract-consent");
+    const inputDivSubMenu = document.querySelector(".input-div-sub-menu");
+
+    settingsIcon.addEventListener("click", () => {
+      subMenu.classList.toggle("open");
+    })
+
+    retractConsent.addEventListener("click", () => {
+      inputDivSubMenu.classList.toggle("open");
+    })
+
+//----------------------------------------------------------------//
 
 submitTosBtn.addEventListener("click", async (event) => {
   event.preventDefault();
@@ -55,7 +69,7 @@ retractBtn.addEventListener("click", async () => {
       }),
     }); 
     const data = await response.json();
-    console.log(data)
+    alert(data, userIdInp.value)
     } catch{
        console.log("Feil ved sletting av bruker:");
     }
