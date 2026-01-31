@@ -20,7 +20,7 @@ userRouter.delete("/:id", (req, res) => {
     delete Users[id];
     res.status(200).json(JSON.stringify(`User ${id} deleted.`));
   } else {
-    res.status(404).json(JSON.stringify(`User not found are`));
+    res.status(404).json(JSON.stringify(`User ${id} not found`));
   }
 });
 
